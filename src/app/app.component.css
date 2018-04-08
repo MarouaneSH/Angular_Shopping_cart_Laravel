@@ -1,0 +1,20 @@
+:host{
+  background: white;
+	width: 95%;
+  margin: 0 auto;
+  display: block;
+}
+
+.page-footer
+{
+	background: #ee6e73;
+  margin: 50px 0;
+  color: white;
+}
+.footer-menu {
+  list-style: none;
+}
+.footer-menu li {
+	margin-right: 10px;
+}
+

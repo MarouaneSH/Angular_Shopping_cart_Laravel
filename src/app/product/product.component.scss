@@ -1,0 +1,47 @@
+#product-menu .active{
+	border: solid 1px #dfaf3f;
+    border-radius: 13px;
+}
+#product-menu  li {
+	display: inline-block;
+    margin-right: 20px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.card footer{
+	color: #dfaf3f;
+  cursor: pointer;
+}
+
+.card{
+  display:inline-block !important;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.hide{
+  display: none !important;
+  animation: fadeItem 0.5s forwards;
+}
+
+
+.display-item{
+  display: inline-block ;
+
+}
+@keyframes fadeItem {
+	0% {
+		transform: scale(0.1);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+:host{
+  display: block;
+  text-align: center;
+}
+

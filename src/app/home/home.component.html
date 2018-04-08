@@ -1,0 +1,39 @@
+<app-carousel [option]="firstCarouselOption" [images]="images" ></app-carousel>
+
+<div id="service" class="service-wrapper">
+  <div class="container">
+    <div class="service-title">
+      <h5>Our Services</h5>
+    </div>
+    <div class="service-description">
+      Saleem is a major importer and distributor of quality Middle Eastern food products, we invite you to visit our warehouse in
+      Mississauga, Ontario and browse through our diverse inventory.
+
+      Utilizing our own fleet of trucks as well as other trucking and logistic companies we distribute a wide array of dairy and non-dairy products
+      that cater to all ethnic communities from coast to coast.
+    </div>
+  </div>
+ </div>
+
+ <div id="brand" class="service-wrapper" >
+    <div class="container">
+      <div class="service-title">
+        <h5>Our Brands</h5>
+      </div>
+      <div class="service-description">
+        <app-carousel [option]="brandCarouselOption" [images]="brands" ></app-carousel>
+        <a class="waves-effect waves-light btn" (click)="navigateTo('/brands')">Explore all Brands</a>
+      </div>
+    </div>
+   </div>
+
+
+ <div class="container" id="retail">
+    <div class="service-title mt-5">
+        <h5>Retail & Distribution</h5>
+    </div>
+    <app-product></app-product>
+</div>
+
+
+

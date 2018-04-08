@@ -1,0 +1,17 @@
+<div class="container">
+  <h5>
+    <i class="icon ion-android-arrow-back" (click)="navigateToHome()"></i>
+    {{categorie}} > {{subcategorie}}
+  </h5>
+  <div class="card-columns"  >
+    <div class="card item" *ngFor="let item of products">
+      <img class="card-img-top" [src]="getUrl(item.url)" alt="{{item.name}}">
+      <div class="card-body">
+        <p class="card-text">
+          {{item.name}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
