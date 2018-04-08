@@ -8,6 +8,8 @@ import { Component, OnInit,HostListener } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  lattitude = 51.678418;
+  longitude = 7.809007;
   images = ['assets/img/1.jpg',
             'assets/img/2.jpg',
             'assets/img/3.jpg',

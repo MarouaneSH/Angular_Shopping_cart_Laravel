@@ -17,6 +17,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { ApiService } from './api.service';
     BrowserAnimationsModule,
     RoutesRoutingModule,
     AngularMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyACz_KexpPKtIUVFd9-YUOqt0qhjeyIWx8'
+    })
   ],
   providers: [ScrollService,ApiService],
   bootstrap: [AppComponent]
