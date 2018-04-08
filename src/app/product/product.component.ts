@@ -38,6 +38,7 @@ export class ProductComponent implements OnInit {
   categories;
   subcategories;
   currentCategory = 'all';
+  loading = true;
 
   constructor(private router:Router,private api:ApiService) { }
 
@@ -48,6 +49,7 @@ export class ProductComponent implements OnInit {
     })
     this.api.get('subcategory').subscribe((e)=>{
       this.subcategories =e.data;
+      this.loading = false;
     })
 
 
@@ -64,9 +66,11 @@ export class ProductComponent implements OnInit {
   }
 
 
-  navigateTo(categorie,subcategorie){
+  navigateTo(categorie,subcategorie,ID){
     window.scrollTo(0,0);
-    this.router.navigate(['/products',categorie,subcategorie]);
+    categorie = categorie.split(' ').join('-').replace('&','and');
+    subcategorie = subcategorie.split(' ').join('-').replace('&','and');
+    this.router.navigate(['/products',categorie,subcategorie,ID]);
   }
 
 

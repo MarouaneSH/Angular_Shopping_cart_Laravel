@@ -8,7 +8,8 @@
     <li (click)="filterItem('home')"  [class.active]="isActive('home')" > Home & Kitchenware</li> -->
   </ul>
   <div class="retail-images">
-    <div class="card-columns"   [@filter]='filter'>
+    <app-loading *ngIf="loading"></app-loading>
+    <div class="card-columns" [@filter]='filter'>
       <div class="card item"
            *ngFor="let item of subcategories"
            [class.hide] ="currentCategory != item.category && currentCategory !='all'"  >
@@ -18,7 +19,7 @@
             {{item.name}}
           </p>
         </div>
-        <footer class="text-right p-2 " (click)="navigateTo(item.category,item.name)" >
+        <footer class="text-right p-2 " (click)="navigateTo(item.category,item.name,item.id)" >
           Details
         </footer>
       </div>

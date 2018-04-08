@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { AgmCoreModule } from '@agm/core';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AgmCoreModule } from '@agm/core';
     BrandsComponent,
     ContactComponent,
     ProductDetailComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

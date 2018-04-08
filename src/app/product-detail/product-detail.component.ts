@@ -1,7 +1,8 @@
-import { productsDetails } from './productsDetails';
+import { HttpParams } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ScrollService } from '../scroll.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,19 +14,23 @@ export class ProductDetailComponent implements OnInit {
   products;
   categorie;
   subcategorie;
-  constructor(private route:ActivatedRoute,private scroll:ScrollService) { }
+  subcategoryID;
+  loading = true;
+
+  constructor(private route:ActivatedRoute,private scroll:ScrollService, private api:ApiService) { }
 
   ngOnInit() {
     this.route.params.forEach((param)=>{
-     this.products = productsDetails.filter((item)=>item.categorie === param['subcategorie']);
-     this.categorie = param['categorie'];
-     this.subcategorie = param['subcategorie'];
+     this.categorie = param['categorie'].split('-').join(' ');
+     this.subcategorie = param['subcategorie'].split('-').join(' ');
+     this.subcategoryID = param['id'];
+     this.api.get(`products/${this.subcategoryID}`).subscribe((products)=>{
+       this.products = products.data;
+       this.loading = false;
+     })
     })
   }
 
-  getUrl(url){
-    return `assets/img/retail/${this.categorie}/${this.subcategorie}/${url}`;
-  }
   navigateToHome(){
     this.scroll.scrollToDiv('retail');
   }
