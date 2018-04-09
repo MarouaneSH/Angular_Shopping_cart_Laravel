@@ -1,10 +1,10 @@
 <div class="container">
   <h5>
-    <i class="icon ion-android-arrow-back" (click)="navigateToHome()"></i>
+    <i class="icon ion-ios-arrow-back" (click)="navigateToHome()"></i>
     {{categorie}} > {{subcategorie}}
   </h5>
   <div class="card-columns"  >
-    <div class="card item" *ngFor="let item of products">
+    <div class="card item" *ngFor="let item of products" (click)="openModal(item)">
       <img class="card-img-top" [src]="item.image" alt="{{item.name}}">
       <div class="card-body">
         <p class="card-text">

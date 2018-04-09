@@ -1,0 +1,30 @@
+
+
+<div class="dialog-close w-100 text-right">
+    <button mat-dialog-close>
+        <i class="icon ion-close-round" ></i>
+      </button>
+</div>
+<div class="row">
+  <div class="col-sm-6 text-center">
+      <img src="{{product.image}}" alt="">
+  </div>
+  <div class="col-sm-6">
+      <h4>{{product.name}} </h4>
+      <p class="lead small p-0 m-0">{{product.productID}} </p>
+      <p class="lead small mt-2">
+        {{product.description}}
+      </p>
+      <div class="quantity">
+        <button (click)="(quantity > 1) ? quantity =  quantity - 1 : quantity = 1 "> - </button>
+        <mat-form-field class="quantity-input">
+            <input matInput placeholder="Quantity" value="{{quantity}} ">
+          </mat-form-field>
+         <button (click)="quantity =  quantity + 1"> + </button>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button mat-raised-button mat class="mr-1 btn-model color-pink" >Add to cart</button>
+        <button mat-raised-button  class="btn-model" mat-dialog-close>Cancel</button>
+      </div>
+  </div>
+</div>

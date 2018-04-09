@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { AgmCoreModule } from '@agm/core';
 import { LoadingComponent } from './loading/loading.component';
+import { ProductDetailModelComponent } from './product-detail-model/product-detail-model.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 
 @NgModule({
@@ -32,6 +34,10 @@ import { LoadingComponent } from './loading/loading.component';
     ContactComponent,
     ProductDetailComponent,
     LoadingComponent,
+    ProductDetailModelComponent,
+  ],
+  entryComponents : [
+    ProductDetailModelComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,11 @@ import { LoadingComponent } from './loading/loading.component';
       apiKey: 'AIzaSyACz_KexpPKtIUVFd9-YUOqt0qhjeyIWx8'
     })
   ],
-  providers: [ScrollService,ApiService],
+  providers: [
+    ScrollService,
+    ApiService ,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

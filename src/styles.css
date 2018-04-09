@@ -9,3 +9,9 @@ body{
 .container{
 	width: 90%;
 }
+
+
+.small{
+  font-size: 12px;
+}
+

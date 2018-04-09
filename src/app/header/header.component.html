@@ -25,6 +25,18 @@
           </ul>
           </div>
           <div class="social">
+            <div class="ws-bag">
+              <i class="icon ion-bag" [matMenuTriggerFor]="menu"></i>
+              <div class="ws-bag-count" [matMenuTriggerFor]="menu">0</div>
+              <mat-menu #menu="matMenu" ckass="p-2">
+                  <div class="ws-cart-empty">
+                    <div class="p small lead">Your Cart is empty</div>
+                  </div>
+                  <div class="ws-cart">
+                      <button mat-menu-item>View My Cart</button>
+                  </div>
+                </mat-menu>
+            </div>
             <i class="icon ion-social-facebook"></i>
             <i class="icon ion-social-google"></i>
             <i class="icon ion-social-twitter"></i>

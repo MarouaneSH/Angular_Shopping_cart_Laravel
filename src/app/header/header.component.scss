@@ -10,13 +10,33 @@
 		margin-bottom: 23px;
 }
 
+.ws-bag{
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  .ws-bag-count{
+    cursor: pointer;
+    position: absolute;
+    font-size: 10px;
+    bottom: -2px;
+    left: -6px;
+    background: #ee6e73;
+    width: 14px;
+    /* line-height: 2; */
+    height: 14px;
+    border-radius: 100%;
+    text-align: center;
+    color: white;
+  }
+}
+
 .navbar{
   background: white;
   padding: 15px;
   position: absolute;
   left: 0;
   right: 0;
-  width: 95%;
+  width: 100%;
   margin: auto;
   top: 0%;
   z-index: 20;
