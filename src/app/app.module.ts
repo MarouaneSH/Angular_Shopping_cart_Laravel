@@ -22,6 +22,8 @@ import { AgmCoreModule } from '@agm/core';
 import { LoadingComponent } from './loading/loading.component';
 import { ProductDetailModelComponent } from './product-detail-model/product-detail-model.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { CartComponent } from './cart/cart.component';
+import { CartModalComponent } from './cart-modal/cart-modal.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
     ProductDetailComponent,
     LoadingComponent,
     ProductDetailModelComponent,
+    CartComponent,
+    CartModalComponent,
   ],
   entryComponents : [
     ProductDetailModelComponent

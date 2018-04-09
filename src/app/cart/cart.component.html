@@ -1,0 +1,63 @@
+<div class="container">
+  <h3 class="text-center">
+      Your cart
+  </h3>
+  <table class="mt-5 hidden-md-down" *ngIf="products.length > 0">
+    <thead>
+      <th>Product</th>
+      <th class="cart-price">Price</th>
+      <th class="cart-quantity">Quantity</th>
+      <th>Total</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+         <td>
+           <div class="d-flex align-items-center">
+            <img [src]="product.item.image"  alt="">
+             <div class="ws-product-description ml-3">
+                <h5>
+                    {{product.item.name}}
+                  </h5>
+                  <p class="lead small">
+                     Reference ID : {{product.item.productID}}
+                  </p>
+                  <p>
+                    <button mat-raised-button (click)="removeFromCart(product)" >Remove </button>
+                  </p>
+             </div>
+           </div>
+         </td>
+         <td class="cart-price">
+              {{product.item.price}} $
+         </td>
+         <td class="cart-quantity">
+            {{product.quantity}}
+         </td>
+         <td>
+           {{product.quantity * product.item.price}} $
+         </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row justify-content-end mt-5">
+    <h3 class="lead ">
+       Subtotal
+    </h3>
+    <h3 class="lead ml-4">
+      55$
+    </h3>
+  </div>
+  <div class="row justify-content-end ">
+    <p class="lead small">
+        the distributor will receive an email contain all information about the products that you've selected, once the distributor receive your request, you will get contacted with.
+    </p>
+  </div>
+  <div class="row justify-content-end mb-5">
+    <button  mat-raised-button class="btn-request" >Send a request</button>
+  </div>
+
+
+  <h6 class="my-5 text-center" *ngIf="products.length == 0">
+      Your Cart is empty
+  </h6>
+</div>

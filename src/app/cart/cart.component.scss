@@ -1,0 +1,40 @@
+h3, table{
+  color: #3d4246;
+}
+
+table{
+  width: 100%;
+}
+table th {
+  font-weight: 500;
+  padding-bottom: 22px;
+}
+table thead{
+  border-bottom: solid 1px rgba(61,66, 70,0.35);
+  margin-bottom: 50px;
+}
+
+table td:first-of-type{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+table tr{
+  border-bottom: solid 1px rgba(61,66, 70,0.35)
+}
+img{
+  width: 100px;
+}
+
+.btn-request{
+  background: #ee6e73;
+    color: white;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-family: Montserrat;
+}
+
+@media screen and (max-width: 640px) {
+  .cart-price , .cart-quantity{
+    display:none;
+  }
+}

@@ -3,23 +3,21 @@
   <ul id="product-menu">
     <li (click)="filterItem('all')" [class.active]="isActive('all')" >All</li>
     <li (click)="filterItem(category.name)" *ngFor="let category of categories" [class.active]="isActive(category.name)" >{{category.name}} </li>
-    <!-- <li (click)="filterItem('Dairy')" [class.active]="isActive('Dairy')" >Dairy & Grocery</li>
-    <li (click)="filterItem('sweet')" [class.active]="isActive('sweet')" >Sweets & Drinks</li>
-    <li (click)="filterItem('home')"  [class.active]="isActive('home')" > Home & Kitchenware</li> -->
   </ul>
   <div class="retail-images">
     <app-loading *ngIf="loading"></app-loading>
     <div class="card-columns" [@filter]='filter'>
       <div class="card item"
            *ngFor="let item of subcategories"
-           [class.hide] ="currentCategory != item.category && currentCategory !='all'"  >
+           [class.hide] ="currentCategory != item.category && currentCategory !='all'"
+           (click)="navigateTo(item.category,item.name,item.id)" >
         <img class="card-img-top" [src]="item.image" alt="{{item.name}}">
         <div class="card-body">
           <p class="card-text">
             {{item.name}}
           </p>
         </div>
-        <footer class="text-right p-2 " (click)="navigateTo(item.category,item.name,item.id)" >
+        <footer class="text-right p-2 " >
           Details
         </footer>
       </div>

@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light" [class.nav-fixed]="navFixed" >
     <div class="container">
-        <a class="navbar-brand" href="#">Salem</a>
+        <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active"  >Salem</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@
                           <i class="icon ion-bag"></i>
                        </div>
                        <p class="small lead text-center">You have {{cartItems.length}} items in your cart </p>
-                       <p class="text-center small font-weight-bold mt-2 ws-choose" (click)="navigate('retail')" >View my Cart</p>
+                       <p class="text-center small font-weight-bold mt-2 ws-choose" (click)="navigateToCart()" >View my Cart</p>
                   </ng-template>
                 </mat-menu>
             </div>

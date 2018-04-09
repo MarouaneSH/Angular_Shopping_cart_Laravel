@@ -10,7 +10,7 @@ import { ScrollService } from '../scroll.service';
 })
 export class HeaderComponent implements OnInit {
 
-
+  cartItems: any = 0;
   navFixed = false;
 
   @HostListener('window:scroll', ['$event'])
@@ -22,19 +22,22 @@ export class HeaderComponent implements OnInit {
      }
   }
 
-  cartItems: any = 0;
-
 
 
   navigate(div){
       this.scrollService.scrollToDiv(div);
   }
+  navigateToCart(){
+    window.scroll(0,0);
+    this.route.navigate(["/cart"]);
+  }
 
   constructor(private route:Router,private scrollService:ScrollService , private cartService:ShoppingCartService) { }
 
   ngOnInit() {
-    this.cartItems = this.cartService.products;
-    console.log(this.cartItems.length );
+    this.cartService.productsRef.subscribe((items)=>{
+      this.cartItems = items;
+    })
   }
 
 }

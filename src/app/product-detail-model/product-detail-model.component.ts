@@ -1,6 +1,7 @@
 import { ShoppingCartService } from './../shopping-cart.service';
 import { Component, OnInit ,Inject} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail-model',
@@ -16,7 +17,8 @@ export class ProductDetailModelComponent implements OnInit {
   addedToCart = false;
   constructor(public dialogRef: MatDialogRef<ProductDetailModelComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
-              private cartService:ShoppingCartService
+              private cartService:ShoppingCartService,
+              private route:Router
   ) {
 
   }
@@ -33,6 +35,12 @@ export class ProductDetailModelComponent implements OnInit {
   addToCart(){
     this.cartService.addToCart(this.product,this.quantity);
     this.addedToCart = true;
+  }
+
+  navigateToCart(){
+    window.scroll(0,0);
+    this.route.navigate(['/cart']);
+    this.onNoClick();
   }
 
 }

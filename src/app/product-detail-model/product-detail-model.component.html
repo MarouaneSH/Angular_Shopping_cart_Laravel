@@ -18,7 +18,7 @@
       <div class="quantity">
         <button (click)="(quantity > 1) ? quantity =  quantity - 1 : quantity = 1 "> - </button>
         <mat-form-field class="quantity-input">
-            <input matInput placeholder="Quantity" value="{{quantity}} ">
+            <input matInput placeholder="Quantity" value="{{quantity}}" type="number" >
           </mat-form-field>
          <button (click)="quantity =  quantity + 1"> + </button>
       </div>
@@ -31,7 +31,7 @@
 <div class="row h-100 justify-content-center align-items-center flex-column" *ngIf="  addedToCart">
     <p>You have successfully added "{{product.name}}" to your cart.</p>
     <p>
-        <button mat-raised-button mat class="mr-1 btn-model color-pink" (click)="addToCart()" >View cart</button>
+        <button mat-raised-button mat class="mr-1 btn-model color-pink" (click)="navigateToCart()" >View cart</button>
         <button mat-raised-button  class="btn-model" mat-dialog-close>Continue shopping</button>
     </p>
 </div>
