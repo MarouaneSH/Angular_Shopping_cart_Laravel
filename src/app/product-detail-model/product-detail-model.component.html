@@ -5,7 +5,7 @@
         <i class="icon ion-close-round" ></i>
       </button>
 </div>
-<div class="row">
+<div class="row" *ngIf="!addedToCart">
   <div class="col-sm-6 text-center">
       <img src="{{product.image}}" alt="">
   </div>
@@ -23,8 +23,15 @@
          <button (click)="quantity =  quantity + 1"> + </button>
       </div>
       <div class="d-flex justify-content-end">
-        <button mat-raised-button mat class="mr-1 btn-model color-pink" >Add to cart</button>
+        <button mat-raised-button mat class="mr-1 btn-model color-pink" (click)="addToCart()" >Add to cart</button>
         <button mat-raised-button  class="btn-model" mat-dialog-close>Cancel</button>
       </div>
   </div>
+</div>
+<div class="row h-100 justify-content-center align-items-center flex-column" *ngIf="  addedToCart">
+    <p>You have successfully added "{{product.name}}" to your cart.</p>
+    <p>
+        <button mat-raised-button mat class="mr-1 btn-model color-pink" (click)="addToCart()" >View cart</button>
+        <button mat-raised-button  class="btn-model" mat-dialog-close>Continue shopping</button>
+    </p>
 </div>

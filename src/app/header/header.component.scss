@@ -10,6 +10,13 @@
 		margin-bottom: 23px;
 }
 
+.ws-cart-empty {
+  text-align: center;
+  cursor: pointer;
+}
+.ws-choose{
+  cursor: pointer;
+}
 .ws-bag{
   display: inline-block;
   position: relative;
@@ -95,6 +102,10 @@
   }
   .social{
     color: white;
+  }
+  .ws-bag-count{
+    color: #ee6e73;
+    background: white;
   }
 }
 

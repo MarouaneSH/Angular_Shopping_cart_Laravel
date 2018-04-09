@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './shopping-cart.service';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -53,7 +54,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
   providers: [
     ScrollService,
     ApiService ,
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })

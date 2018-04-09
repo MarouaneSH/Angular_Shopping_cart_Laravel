@@ -27,14 +27,24 @@
           <div class="social">
             <div class="ws-bag">
               <i class="icon ion-bag" [matMenuTriggerFor]="menu"></i>
-              <div class="ws-bag-count" [matMenuTriggerFor]="menu">0</div>
-              <mat-menu #menu="matMenu" ckass="p-2">
-                  <div class="ws-cart-empty">
-                    <div class="p small lead">Your Cart is empty</div>
+              <div class="ws-bag-count" [matMenuTriggerFor]="menu"> {{cartItems.length}} </div>
+              <mat-menu #menu="matMenu" class="px-3 pt-3" xPosition="before" direction="center">
+                  <div *ngIf="cartItems.length == 0;then cartempty else cart">
                   </div>
-                  <div class="ws-cart">
-                      <button mat-menu-item>View My Cart</button>
-                  </div>
+                  <ng-template #cartempty  class="ws-cart-empty text-center">
+                       <div class="text-center ws-cart-icon h3">
+                          <i class="icon ion-bag"></i>
+                       </div>
+                      <div class="p small lead">Your Cart is empty</div>
+                      <p class="text-center small font-weight-bold mt-2 ws-choose" (click)="navigate('retail')" >Choose Product</p>
+                  </ng-template>
+                  <ng-template #cart  class="ws-cart">
+                      <div class="text-center ws-cart-icon h3">
+                          <i class="icon ion-bag"></i>
+                       </div>
+                       <p class="small lead text-center">You have {{cartItems.length}} items in your cart </p>
+                       <p class="text-center small font-weight-bold mt-2 ws-choose" (click)="navigate('retail')" >View my Cart</p>
+                  </ng-template>
                 </mat-menu>
             </div>
             <i class="icon ion-social-facebook"></i>
