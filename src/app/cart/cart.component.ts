@@ -1,5 +1,8 @@
+import { CartModalComponent } from './../cart-modal/cart-modal.component';
 import { ShoppingCartService } from './../shopping-cart.service';
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cartService:ShoppingCartService) { }
+  constructor(private cartService:ShoppingCartService,private dialog:MatDialog) { }
 
   products : any;
 
@@ -19,6 +22,12 @@ export class CartComponent implements OnInit {
   removeFromCart(item){
     this.cartService.removeFromCart(item);
     this.products = this.cartService.products;
+  }
+
+  openModal(){
+    this.dialog.open(CartModalComponent, {
+      width :'80%',
+    })
   }
 
 }

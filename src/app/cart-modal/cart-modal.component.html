@@ -1,3 +1,18 @@
-<p>
-  cart-modal works!
-</p>
+<div class="container">
+       <h2>Send a Request</h2>
+       <form class="">
+           <mat-form-field class="d-flex flex-column">
+               <input matInput placeholder="Your name *" value="">
+           </mat-form-field>
+           <mat-form-field class="d-flex flex-column">
+              <input matInput placeholder="Your email *" value="">
+          </mat-form-field>
+           <mat-form-field class="d-flex flex-column">
+               <textarea matInput placeholder="Comment" rows="3"></textarea>
+            </mat-form-field>
+         </form>
+         <div class="d-flex justify-content-end">
+            <button mat-raised-button mat class="mr-1 btn-model color-pink" (click)="sendRequest()" >Add to cart</button>
+            <button mat-raised-button  class="btn-model" mat-dialog-close>Cancel</button>
+          </div>
+ </div>

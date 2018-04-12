@@ -22,9 +22,14 @@ export class ApiService {
   }
 
 
+ post(path,params){
+      return this.http.post(`${apiUrl}/${path}`, params)
+                .pipe(
+                  catchError(this.handleError)
+                );
+ }
 
   handleError(err:any){
-    console.log("sdds");
     return Observable.throw(err);
   }
 }

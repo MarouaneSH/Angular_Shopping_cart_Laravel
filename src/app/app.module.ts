@@ -42,7 +42,8 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
     CartModalComponent,
   ],
   entryComponents : [
-    ProductDetailModelComponent
+    ProductDetailModelComponent,
+    CartModalComponent
   ],
   imports: [
     BrowserModule,

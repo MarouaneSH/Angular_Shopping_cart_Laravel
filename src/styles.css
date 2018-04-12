@@ -15,3 +15,9 @@ body{
   font-size: 12px;
 }
 
+.mat-focused .mat-form-field-label{
+  color: #ee6e73;
+}
+.mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background: #ee6e73;
+}
