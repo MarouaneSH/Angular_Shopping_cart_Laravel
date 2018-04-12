@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" *ngIf="products.length > 0">
   <h3 class="text-center">
       Your cart
   </h3>
-  <table class="mt-5 hidden-md-down" *ngIf="products.length > 0">
+  <table class="mt-5 hidden-md-down" >
     <thead>
       <th>Product</th>
       <th class="cart-price">Price</th>
@@ -44,7 +44,7 @@
        Subtotal
     </h3>
     <h3 class="lead ml-4">
-      55$
+      {{getSubtotal()}}
     </h3>
   </div>
   <div class="row justify-content-end ">
@@ -55,9 +55,13 @@
   <div class="row justify-content-end mb-5">
     <button  mat-raised-button class="btn-request"  (click)="openModal()">Send a request</button>
   </div>
-
-
-  <h6 class="my-5 text-center" *ngIf="products.length == 0">
-      Your Cart is empty
-  </h6>
 </div>
+
+
+<div class="cart-empty text-center "  *ngIf="products.length == 0">
+    <h3>Your cart</h3>
+    <h6 class="my-5 text-center">
+        Your Cart is empty
+    </h6>
+</div>
+

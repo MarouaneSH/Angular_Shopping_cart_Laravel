@@ -1,18 +1,51 @@
-<div class="container">
+<div class="container" *ngIf="!loading && !sendSuccess">
        <h2>Send a Request</h2>
-       <form class="">
+       <form class="" [formGroup]="requestForm" >
            <mat-form-field class="d-flex flex-column">
-               <input matInput placeholder="Your name *" value="">
+               <input matInput placeholder="Your name *"  formControlName="name" >
+               <mat-error>
+                Please enter your name
+              </mat-error>
            </mat-form-field>
            <mat-form-field class="d-flex flex-column">
-              <input matInput placeholder="Your email *" value="">
+              <input matInput placeholder="Your email *" formControlName="email" >
+              <mat-error>
+                Please enter a valid email
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="d-flex flex-column">
+              <input matInput placeholder="Your Phone number *" formControlName="phone" >
+              <mat-error>
+                Please enter a valid phone number
+              </mat-error>
           </mat-form-field>
            <mat-form-field class="d-flex flex-column">
-               <textarea matInput placeholder="Comment" rows="3"></textarea>
+               <textarea matInput placeholder="Comment" formControlName="comment" rows="3"></textarea>
+               <mat-error>
+                  Max caractere allowed is 200
+                </mat-error>
             </mat-form-field>
          </form>
          <div class="d-flex justify-content-end">
-            <button mat-raised-button mat class="mr-1 btn-model color-pink" (click)="sendRequest()" >Add to cart</button>
+            <button mat-raised-button mat class="mr-1 btn-model color-pink"
+                    (click)="sendRequest()"
+                    [disabled] = "!requestForm.valid">
+                    Send request
+            </button>
             <button mat-raised-button  class="btn-model" mat-dialog-close>Cancel</button>
           </div>
  </div>
+
+ <app-loading *ngIf="loading"></app-loading>
+
+ <div class="row mt-5 h-100 justify-content-center align-items-center flex-column" *ngIf="sendSuccess">
+    <p>Your request has been submitted successfully.</p>
+    <p>
+        <button mat-raised-button  class="btn-model color-pink" mat-dialog-close>Close</button>
+    </p>
+</div>
+
+<div class="row h-100 justify-content-center align-items-center flex-column" *ngIf="requestError">
+    <h3>Ops, and error has occurred please contact site administrator.</h3>
+    <button mat-raised-button  class="btn-model color-pink" mat-dialog-close>Close</button>
+</div>

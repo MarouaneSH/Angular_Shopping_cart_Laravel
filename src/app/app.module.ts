@@ -24,6 +24,7 @@ import { ProductDetailModelComponent } from './product-detail-model/product-deta
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { CartComponent } from './cart/cart.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyACz_KexpPKtIUVFd9-YUOqt0qhjeyIWx8'
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     ScrollService,

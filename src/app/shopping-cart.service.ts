@@ -8,25 +8,7 @@ export class ShoppingCartService {
 
   productsRef = new BehaviorSubject<any>([]);
 
-  products : any = [{
-    item : {
-      productID: "ML-8879",
-      name: "GW Rice",
-      price : '50',
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "http://localhost:8000/storage/products/March2018/jGpZzWev6COAKTZOG0is.jpg"
-    },
-    quantity : 20
-  },{
-    item : {
-      productID: "ML-770",
-      name: "GW Rice",
-      price : '50',
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "http://localhost:8000/storage/products/March2018/jGpZzWev6COAKTZOG0is.jpg"
-    },
-    quantity : 20
-  }];
+  products : any = [];
 
   constructor() {
       this.productsRef.next(this.products);

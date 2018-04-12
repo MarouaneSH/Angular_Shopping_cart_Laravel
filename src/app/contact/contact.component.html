@@ -1,14 +1,54 @@
 <div class="container">
-   <div class="card p-5 text-center">
-      <h2>Contact us</h2>
-      <form class="">
-          <mat-form-field class="d-flex flex-column">
-              <input matInput placeholder="Your name" value="Sushi">
-          </mat-form-field>
-          <mat-form-field class="d-flex flex-column">
-              <textarea matInput placeholder="Leave a comment" rows="10"></textarea>
-           </mat-form-field>
-           <button mat-raised-button color="primary">SEND</button>
-        </form>
-      </div>
+    <div class="card p-5">
+        <div *ngIf="!loading && !sendSuccess">
+            <h2>Contact us</h2>
+            <form class="" [formGroup]="contactForm" >
+                <mat-form-field class="d-flex flex-column">
+                    <input matInput placeholder="Your name *"  formControlName="name" >
+                    <mat-error>
+                     Please enter your name
+                   </mat-error>
+                </mat-form-field>
+                <mat-form-field class="d-flex flex-column">
+                   <input matInput placeholder="Your email *" formControlName="email" >
+                   <mat-error>
+                     Please enter a valid email
+                   </mat-error>
+               </mat-form-field>
+               <mat-form-field class="d-flex flex-column">
+                   <input matInput placeholder="Your Phone number *" formControlName="phone" >
+                   <mat-error>
+                     Please enter a valid phone number
+                   </mat-error>
+               </mat-form-field>
+                <mat-form-field class="d-flex flex-column">
+                    <textarea matInput placeholder="Comment" formControlName="comment" rows="3"></textarea>
+                    <mat-error>
+                       Max caractere allowed is 200
+                     </mat-error>
+                 </mat-form-field>
+              </form>
+              <div class="d-flex justify-content-end">
+                 <button mat-raised-button mat class="mr-1 btn-model color-pink"
+                         (click)="sendRequest()"
+                         [disabled] = "!contactForm.valid">
+                         Send
+                 </button>
+               </div>
+        </div>
+
+        <app-loading *ngIf="loading"></app-loading>
+
+        <div class="row mt-5 h-100 justify-content-center align-items-center flex-column" *ngIf="sendSuccess">
+         <p>THANK YOU!.</p>
+         <p>We will be in touch shortly.</p>
+         <p>
+         </p>
+        </div>
+
+        <div class="row h-100 justify-content-center align-items-center flex-column" *ngIf="requestError">
+         <h3>Ops, and error has occurred please contact site administrator.</h3>
+        </div>
+
+    </div>
 </div>

@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.cartService.products;
+    console.log(JSON.stringify(this.products));
   }
 
   removeFromCart(item){
@@ -24,6 +25,9 @@ export class CartComponent implements OnInit {
     this.products = this.cartService.products;
   }
 
+  getSubtotal(){
+    return this.products.map(product => product.quantity * product.item.price).reduce((prev, next) => prev + next);
+  }
   openModal(){
     this.dialog.open(CartModalComponent, {
       width :'80%',
