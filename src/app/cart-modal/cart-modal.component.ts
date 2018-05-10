@@ -33,6 +33,9 @@ export class CartModalComponent implements OnInit {
         'email' : ['' , [Validators.required, Validators.email]],
         'comment' : ['' , [Validators.maxLength(200)]],
         'phone' : ['' , [Validators.required, Validators.minLength(8)]],
+        'store' : ['' , [Validators.required]],
+        'address' : ['' , [Validators.required]],
+        'city' : ['' , [Validators.required]],
      })
   }
 
@@ -43,7 +46,11 @@ export class CartModalComponent implements OnInit {
                                    nom : this.requestForm.controls['name'].value,
                                    email : this.requestForm.controls['email'].value,
                                    comment : this.requestForm.controls['comment'].value,
-                                   phone : this.requestForm.controls['phone'].value, })
+                                   phone : this.requestForm.controls['phone'].value,
+                                   store : this.requestForm.controls['store'].value,
+                                   address : this.requestForm.controls['address'].value,
+                                   city : this.requestForm.controls['city'].value,
+                                  })
             .subscribe((data)=>{
                 this.loading = false;
                 this.sendSuccess = true;

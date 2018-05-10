@@ -21,3 +21,8 @@ body{
 .mat-focused .mat-form-field-underline .mat-form-field-ripple{
   background: #ee6e73;
 }
+
+.mat-dialog-container{
+  overflow-y: scroll;
+  max-height: 95vh;
+}
