@@ -1,25 +1,25 @@
 <div class="container my-4">
-  <h5>
-    <i class="icon ion-ios-arrow-back" (click)="navigateToHome()"></i>
-    {{categorie}} > {{subcategorie}}
-  </h5>
-  <div class="card-columns"  >
-    <div class="card item" *ngFor="let item of products" (click)="openModal(item)">
-      <img class="card-img-top" [src]="item.image" alt="{{item.name}}">
-      <div class="card-body">
-        <p class="card-text">
-          {{item.name}}
-        </p>
-      </div>
-      <div class="text-right">
-        <p class="lead pr-2">{{item.productID}} </p>
-      </div>
+    <h5>
+      <i class="icon ion-ios-arrow-back" (click)="navigateToHome()"></i>
+      {{categorie}} > {{subcategorie}}
+    </h5>
+    <div class="card-columns"  >
+        <div class="card item"  *ngFor="let item of products" (click)="openModal(item)">
+          <img class="card-img-top" [src]="item.image" alt="{{item.name}}">
+          <div class="card-body">
+            <p class="card-text">
+              {{item.name}}
+            </p>
+          </div>
+          <div class="text-right">
+            <p class="lead pr-2">{{item.productID}} </p>
+          </div>
+        </div>
     </div>
+
+    <app-loading *ngIf="loading"></app-loading>
+
+    <h5 class="text-center my-5 " *ngIf="!loading && products.length == 0">
+      This category has no products yet.
+    </h5>
   </div>
-
-  <app-loading *ngIf="loading"></app-loading>
-
-  <h5 class="text-center my-5 " *ngIf="!loading && products.length == 0">
-    This category has no products yet.
-  </h5>
-</div>

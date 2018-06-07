@@ -1,6 +1,6 @@
 .service-wrapper{
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 50px;
 }
 .service-title{
 	position: relative;
@@ -73,5 +73,12 @@
 
 agm-map{
 	width: 100%;
-	height: 500px;
+	height: 100%;
+  }
+
+
+  @media screen and (max-width: 890px) {
+    agm-map{
+      height: 500px;
+    }
   }

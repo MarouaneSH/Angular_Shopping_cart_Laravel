@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit,HostListener } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-home',
@@ -8,38 +9,49 @@ import { Component, OnInit,HostListener } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  lattitude = 51.678418;
-  longitude = 7.809007;
+  lattitude = 43.519730;
+  longitude = -79.70151;
+  zoom = 14;
+  serviceDescription : '';
 
-  images = ['assets/img/1.jpg',
-            'assets/img/2.jpg',
-            'assets/img/3.jpg',
-            'assets/img/1.jpg'];
+  images = [];
 
   firstCarouselOption = {
+    autoplay :true,
       nav: false,
-      dots: false,
-      loop: true,
-      items: 3,
-      stagePadding: 20,
-  };
+      dots : false,
 
-  brands = ['assets/img/brand2.png',
-            'assets/img/brand2.png'];
-  brandCarouselOption = {
-      nav: false,
-      dots: false,
       loop: true,
       items: 1,
+  };
+
+  brands = [] ;
+  brandCarouselOption = {
+      nav: false,
+      autoplay :true,
+      dots: false,
+      autoplayTimeout : 2000,
+      loop: true,
+      items: 5,
       stagePadding: 0,
   };
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private api:ApiService) { }
 
 
   ngOnInit() {
+    this.api.get('sliders').subscribe((e)=>{
+      this.images =e.data.map((el) => el.image);
+    })
 
+    this.api.get('brands').subscribe((e)=>{
+      this.brands =e.data.map((el) => el.image);
+    })
+
+    this.api.get('getSettings/service').subscribe((e)=>{
+     this.serviceDescription = e;
+    })
   }
 
 

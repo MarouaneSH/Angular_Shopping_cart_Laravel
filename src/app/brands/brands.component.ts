@@ -1,3 +1,5 @@
+import { ScrollService } from './../scroll.service';
+import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrandsComponent implements OnInit {
 
-  constructor() { }
+  brands = [];
+
+  constructor(private api:ApiService, private scroll:ScrollService) { }
 
   ngOnInit() {
+    this.api.get('brands').subscribe((e)=>{
+      this.brands =e.data.map((el) => el.image);
+    })
   }
 
+  navigateToHome(){
+    this.scroll.scrollToDiv('retail');
+  }
 }

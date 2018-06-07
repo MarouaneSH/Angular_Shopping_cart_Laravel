@@ -1,6 +1,6 @@
 import { ShoppingCartService } from './../shopping-cart.service';
-import { Component, OnInit,HostListener,ViewChild,EventEmitter,Output} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, HostListener, ViewChild, EventEmitter, Output, Input } from '@angular/core';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ScrollService } from '../scroll.service';
 
 @Component({
@@ -12,6 +12,9 @@ export class HeaderComponent implements OnInit {
 
   cartItems: any = 0;
   navFixed = false;
+  navHome : true;
+  test : 'red';
+  @Input() social;
 
   @HostListener('window:scroll', ['$event'])
   changeNav() {
@@ -32,7 +35,12 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(["/cart"]);
   }
 
-  constructor(private route:Router,private scrollService:ScrollService , private cartService:ShoppingCartService) { }
+  constructor(private route:Router,private scrollService:ScrollService , private cartService:ShoppingCartService) {
+    this.route.events.filter(event => event instanceof NavigationStart).subscribe((val)=>{
+        this.navHome =  (val.url === '/');
+        console.log(this.navHome);
+    })
+  }
 
   ngOnInit() {
     this.cartService.productsRef.subscribe((items)=>{

@@ -1,3 +1,5 @@
+
+
 .logo{
 	text-align: center;
 	padding-top: 20px;
@@ -36,17 +38,28 @@
     color: white;
   }
 }
+.navbar-light .navbar-nav .active>.nav-link {
+  color:#e7e7ee !important;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(242, 206, 207);
+}
+
 
 .navbar{
   background: white;
   padding: 15px;
-  position: absolute;
+  z-index: 4 ;
   left: 0;
   right: 0;
   width: 100%;
   margin: auto;
   top: 0%;
   z-index: 20;
+  .container {
+    border-bottom: solid 1px rgba(53, 56, 59, 0.2);
+    padding-bottom: 16px;
+  }
   &::after{
     content: "";
     position: absolute;
@@ -62,7 +75,7 @@
     position: relative;
   }
   a{
-    color: #2c3b4b;
+    color: #434368;
     cursor: pointer;
   }
   .social{
@@ -89,11 +102,34 @@
 
 }
 
+
+.navHome {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.48), rgba(40, 40, 56, 0));
+  position: absolute;
+  .ws-bag {
+    color:white;
+  }
+  .container{
+    border: none;
+  }
+  a{
+    color: #e7e7ee;
+  }
+}
+
+.navbar::after {
+  background: none;
+}
+
 .nav-fixed{
   background: #ee6e73;
   position: fixed;
   top: 0;
   animation: scroll 0.5s forwards;
+  .container {
+    border: none;
+    padding-bottom: 0;
+  }
   &::after{
     height: 0;
   }
@@ -117,4 +153,20 @@
 	100%{
 		transform: translateY(0);
 	}
+}
+
+
+@media screen and (max-width: 890px) {
+  #mainNav{
+    padding-bottom: 50px;
+  }
+  .navbar .navbar-brand{
+    left: 64px;
+    font-size: 18px;
+    top: 0;
+  }
+  .social{
+    position: relative !important;
+    margin-left: auto;
+  }
 }

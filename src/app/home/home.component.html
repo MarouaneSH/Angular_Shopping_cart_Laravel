@@ -5,12 +5,11 @@
     <div class="service-title">
       <h5>Our Services</h5>
     </div>
+     <div class="logo mt-4">
+      <img src="assets/img/logo.jpg">
+    </div>
     <div class="service-description">
-      Saleem is a major importer and distributor of quality Middle Eastern food products, we invite you to visit our warehouse in
-      Mississauga, Ontario and browse through our diverse inventory.
-
-      Utilizing our own fleet of trucks as well as other trucking and logistic companies we distribute a wide array of dairy and non-dairy products
-      that cater to all ethnic communities from coast to coast.
+      {{serviceDescription}}
     </div>
   </div>
  </div>
@@ -22,7 +21,7 @@
       </div>
       <div class="service-description">
         <app-carousel [option]="brandCarouselOption" [images]="brands" ></app-carousel>
-        <a class="waves-effect waves-light btn" (click)="navigateTo('/brands')">Explore all Brands</a>
+        <a class="waves-effect waves-light btn mt-3" (click)="navigateTo('/brands')">Explore all Brands</a>
       </div>
     </div>
    </div>
@@ -34,7 +33,53 @@
     </div>
     <app-product></app-product>
 </div>
-<agm-map [latitude]="lattitude" [longitude]="longitude"></agm-map>
 
+<div id="about-us" class="container-fluid">
+  <div class="container">
+      <div class="service-title mt-5">
+          <h5>About us</h5>
+      </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 p-0">
+      <agm-map [zoom]="zoom" [latitude]="lattitude" [longitude]="longitude">
+          <agm-marker [latitude]="lattitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="col-md-6 p-0">
+      <mat-card>
+        <mat-card-content>
+            <mat-list>
+              <h3 mat-subheader>Company</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>card_travel</mat-icon>
+                <h4 mat-line>Salem brothers</h4>
+              </mat-list-item>
+              <h3 mat-subheader>Address</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>location_on</mat-icon>
+                <h4 mat-line>9-3585 Laird Road, Mississauga, ON, CANADA</h4>
+              </mat-list-item>
+              <h3 mat-subheader>E-mail</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>email</mat-icon>
+                <h4 mat-line>sales@salembrotherscanada.com</h4>
+              </mat-list-item>
+              <h3 mat-subheader>Cell</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>phone</mat-icon>
+                <h4 mat-line>519-919-6111</h4>
+              </mat-list-item>
+              <h3 mat-subheader>Fax</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>phone</mat-icon>
+                <h4 mat-line>905-8282-7997</h4>
+              </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
 
 

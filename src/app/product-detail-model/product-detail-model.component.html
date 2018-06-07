@@ -12,9 +12,6 @@
   <div class="col-sm-6">
       <h4>{{product.name}} </h4>
       <p class="lead small p-0 m-0">{{product.productID}} </p>
-      <p class="lead small mt-2">
-        {{product.description}}
-      </p>
       <div class="quantity">
         <button (click)="(quantity > 1) ? quantity =  quantity - 1 : quantity = 1 "> - </button>
         <mat-form-field class="quantity-input">
