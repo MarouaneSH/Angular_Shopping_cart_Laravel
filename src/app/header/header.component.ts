@@ -2,6 +2,7 @@ import { ShoppingCartService } from './../shopping-cart.service';
 import { Component, OnInit, HostListener, ViewChild, EventEmitter, Output, Input } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ScrollService } from '../scroll.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,10 @@ export class HeaderComponent implements OnInit {
 
   cartItems: any = 0;
   navFixed = false;
-  navHome : true;
+  navHome : boolean;
   test : 'red';
+  collapse = true;
+
   @Input() social;
 
   @HostListener('window:scroll', ['$event'])
@@ -37,15 +40,19 @@ export class HeaderComponent implements OnInit {
 
   constructor(private route:Router,private scrollService:ScrollService , private cartService:ShoppingCartService) {
     this.route.events.filter(event => event instanceof NavigationStart).subscribe((val)=>{
-        this.navHome =  (val.url === '/');
-        console.log(this.navHome);
-    })
+        this.navHome =  (val['url'] === '/');
+        this.collapse = false;
+    });
+
+
   }
 
   ngOnInit() {
     this.cartService.productsRef.subscribe((items)=>{
       this.cartItems = items;
-    })
+    });
+        //toggle navbar
+        $('.nav-link').click(function(){ $('.navbar-collapse').toggleClass('show') });
   }
 
 }

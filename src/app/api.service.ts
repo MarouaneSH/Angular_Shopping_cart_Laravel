@@ -5,7 +5,7 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Observable } from 'rxjs/Rx'
 
 
-const apiUrl =  "http://localhost:8000/api";
+const apiUrl =  "http://salembrothers.ca/app/api";
 
 @Injectable()
 export class ApiService {

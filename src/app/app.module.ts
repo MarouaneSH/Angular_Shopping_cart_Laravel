@@ -2,6 +2,7 @@ import { ShoppingCartService } from './shopping-cart.service';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ImageZoomModule} from 'angular2-image-zoom';
 
 
 import { AppComponent } from './app.component';
@@ -56,7 +57,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyACz_KexpPKtIUVFd9-YUOqt0qhjeyIWx8'
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ImageZoomModule
   ],
   providers: [
     ScrollService,

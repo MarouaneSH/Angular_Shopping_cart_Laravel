@@ -17,7 +17,7 @@
     margin: 0 auto;
     width: 15%;
     height: 15%;
-    background-color: #ee6e73;
+    background-color: #309274;
     border-radius: 100%;
     -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
             animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
@@ -99,7 +99,7 @@
   .sk-circle .sk-circle12:before {
     -webkit-animation-delay: -0.1s;
             animation-delay: -0.1s; }
-  
+
   @-webkit-keyframes sk-circleBounceDelay {
     0%, 80%, 100% {
       -webkit-transform: scale(0);
@@ -109,7 +109,7 @@
               transform: scale(1);
     }
   }
-  
+
   @keyframes sk-circleBounceDelay {
     0%, 80%, 100% {
       -webkit-transform: scale(0);

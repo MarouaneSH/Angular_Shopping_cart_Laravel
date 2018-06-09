@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 body{
   background:#f6f9fc;
@@ -16,10 +17,10 @@ body{
 }
 
 .mat-focused .mat-form-field-label{
-  color: #ee6e73;
+  color: #309274;
 }
 .mat-focused .mat-form-field-underline .mat-form-field-ripple{
-  background: #ee6e73;
+  background: #309274;
 }
 
 .mat-dialog-container{

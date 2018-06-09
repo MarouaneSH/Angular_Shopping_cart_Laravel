@@ -7,7 +7,7 @@
 </div>
 <div class="row" *ngIf="!addedToCart">
   <div class="col-sm-6 text-center">
-      <img src="{{product.image}}" alt="">
+      <img [src]="product.image" [imageZoom]="product.image" alt="">
   </div>
   <div class="col-sm-6">
       <h4>{{product.name}} </h4>
