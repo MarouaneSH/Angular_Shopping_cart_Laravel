@@ -51,8 +51,8 @@ export class HeaderComponent implements OnInit {
     this.cartService.productsRef.subscribe((items)=>{
       this.cartItems = items;
     });
-        //toggle navbar
-        $('.nav-link').click(function(){ $('.navbar-collapse').toggleClass('show') });
+    //toggle navbar
+    $('.nav-link').click(function(){ $('.navbar-collapse').toggleClass('show') });
   }
 
 }

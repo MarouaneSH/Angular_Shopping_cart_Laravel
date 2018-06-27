@@ -27,3 +27,12 @@ body{
   overflow-y: scroll;
   max-height: 95vh;
 }
+
+
+.top-logo {
+  text-align: center;
+  margin-bottom: 25px;
+  .img-logo{
+    width: 200px;
+  }
+}

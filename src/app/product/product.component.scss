@@ -30,6 +30,22 @@
   display: inline-block ;
 
 }
+
+h5{
+  margin-top: 60px;
+  font-size: 14px;
+    color: #2c3b4b;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+i{
+  margin-right: 10px;
+  font-size: 25px;
+  cursor:pointer;
+}
+
 @keyframes fadeItem {
 	0% {
 		transform: scale(0.1);

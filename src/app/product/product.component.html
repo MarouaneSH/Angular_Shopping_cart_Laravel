@@ -1,26 +1,32 @@
 
-<div class="service-description mt-5">
-  <ul id="product-menu">
-    <li (click)="filterItem('all')" [class.active]="isActive('all')" >All</li>
-    <li (click)="filterItem(category.name)" *ngFor="let category of categories" [class.active]="isActive(category.name)" >{{category.name}} </li>
-  </ul>
-  <div class="retail-images">
-    <app-loading *ngIf="loading"></app-loading>
-    <div class="card-columns" [@filter]='filter'>
-      <div class="card item"
-           *ngFor="let item of subcategories"
-           [class.hide] ="currentCategory != item.category && currentCategory !='all'"
-           (click)="navigateTo(item.category,item.name,item.id)" >
-        <img class="card-img-top" [src]="item.image" alt="{{item.name}}">
-        <div class="card-body">
-          <p class="card-text">
-            {{item.name}}
-          </p>
+<div class="container my-4">
+  <h5>
+    <i class="icon ion-ios-arrow-back" [routerLink]="['/']"></i>
+    Products
+  </h5>
+  <div class="service-description mt-5">
+    <ul id="product-menu">
+      <li (click)="filterItem('all')" [class.active]="isActive('all')" >All</li>
+      <li (click)="filterItem(category.name)" *ngFor="let category of categories" [class.active]="isActive(category.name)" >{{category.name}} </li>
+    </ul>
+    <div class="retail-images">
+      <app-loading *ngIf="loading"></app-loading>
+      <div class="card-columns" [@filter]='filter'>
+        <div class="card item"
+             *ngFor="let item of subcategories"
+             [class.hide] ="currentCategory != item.category && currentCategory !='all'"
+             (click)="navigateTo(item.category,item.name,item.id)" >
+          <img class="card-img-top" [src]="item.image" alt="{{item.name}}">
+          <div class="card-body">
+            <p class="card-text">
+              {{item.name}}
+            </p>
+          </div>
+          <footer class="text-right p-2 " >
+            Details
+          </footer>
         </div>
-        <footer class="text-right p-2 " >
-          Details
-        </footer>
       </div>
-    </div>
-</div>
+  </div>
+  </div>
 </div>

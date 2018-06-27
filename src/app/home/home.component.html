@@ -1,12 +1,20 @@
-<app-carousel [option]="firstCarouselOption" [images]="images" ></app-carousel>
-
+<div class="salem-slider">
+  <app-carousel [option]="firstCarouselOption" [images]="images" ></app-carousel>
+  <div class="salem-brands">
+    <img src="assets/img/logo.png" class="img-logo">
+    <p>Salem Brothers Inc specializes in the distribution of Middle Eastern food products across Canada</p>
+   <div>
+     <a [routerLink]="['/products']" class="btn btn-explore ">Explore All Products</a>
+   </div>
+  </div>
+</div>
 <div id="service" class="service-wrapper">
   <div class="container">
     <div class="service-title">
       <h5>Our Services</h5>
     </div>
      <div class="logo mt-4">
-      <img src="assets/img/logo.jpg">
+      <img src="assets/img/logo.png" class="img-logo">
     </div>
     <div class="service-description">
       {{serviceDescription}}
@@ -27,12 +35,12 @@
    </div>
 
 
- <div class="container" id="retail">
+ <!-- <div class="container" id="retail">
     <div class="service-title mt-5">
-        <h5>Retail & Distribution</h5>
+        <h5>Products</h5>
     </div>
     <app-product></app-product>
-</div>
+</div> -->
 
 <div id="about-us" class="container-fluid">
   <div class="container">

@@ -66,6 +66,7 @@ export class ProductComponent implements OnInit {
   }
 
 
+
   navigateTo(categorie,subcategorie,ID){
     window.scrollTo(0,0);
     categorie = categorie.split(' ').join('-').replace('&','and');
