@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(["/cart"]);
   }
 
-  constructor(private route:Router,private scrollService:ScrollService , private cartService:ShoppingCartService) {
+  constructor(public route:Router,private scrollService:ScrollService , private cartService:ShoppingCartService) {
     this.route.events.filter(event => event instanceof NavigationStart).subscribe((val)=>{
         this.navHome =  (val['url'] === '/');
         this.collapse = false;

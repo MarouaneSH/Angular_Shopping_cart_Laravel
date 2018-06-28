@@ -9,7 +9,7 @@
  content: '';
  width: 100%;
  height: 1px;
- background: #a89884;
+ background: #e60513;
  position: absolute;
  top: 0;
  bottom: 0;
@@ -18,7 +18,7 @@
  z-index: 0;
 }
 .service-title h5{
-	background: #309274;
+	background: #74b82c;
 	color: white;
 	 width: fit-content;
     margin: auto;
@@ -31,7 +31,7 @@
 	height: 0;
 	border-top: 17px solid transparent;
 	border-bottom: 17px solid transparent;
-	border-left: 17px solid #309274;
+	border-left: 17px solid #74b82c;
     position: absolute;
     right: -17px;
     top: 0;
@@ -44,7 +44,7 @@
 	height: 0;
 	border-top: 17px solid transparent;
 	border-bottom: 17px solid transparent;
-	border-right:17px solid #309274;
+	border-right:17px solid #74b82c;
     position: absolute;
     left: -17px;
     top: 0;
@@ -57,7 +57,7 @@
 }
 
 .btn{
-	background: #26a69a;
+	background: #74b82c;
 	font-family: Montserrat;
 	font-weight: lighter;
 	color: #ffffff !important;
@@ -70,7 +70,7 @@
 }
 
 .img-logo {
-  width: 300px;
+  width: 220px;
 }
 
 .salem-slider{
@@ -81,7 +81,7 @@
   }
   .btn-explore {
     background: none;
-    border: solid #26a69a 2px;
+    border: solid #74b82c 2px;
     border-radius: 40px;
     color: white !important;
     background: rgba(0, 0, 0, 0.2);
@@ -107,5 +107,18 @@ agm-map{
   @media screen and (max-width: 890px) {
     agm-map{
       height: 500px;
+    }
+    body {
+      background: red
+    }
+    .salem-brands{
+      background: url('/assets/img/mobile.jpg');
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 100px;
+      position: relative;
+    }
+    #slider-carousel{
+      display: none;
     }
   }

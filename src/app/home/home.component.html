@@ -1,14 +1,14 @@
 <div class="salem-slider">
-  <app-carousel [option]="firstCarouselOption" [images]="images" ></app-carousel>
+  <app-carousel id="slider-carousel" [option]="firstCarouselOption" [images]="images" ></app-carousel>
   <div class="salem-brands">
     <img src="assets/img/logo.png" class="img-logo">
-    <p>Salem Brothers Inc specializes in the distribution of Middle Eastern food products across Canada</p>
+    <p>Salem Brothers specializes in the distribution of Middle Eastern food products across Canada</p>
    <div>
      <a [routerLink]="['/products']" class="btn btn-explore ">Explore All Products</a>
    </div>
   </div>
 </div>
-<div id="service" class="service-wrapper">
+<div id="service" class="service-wrapper mb-5">
   <div class="container">
     <div class="service-title">
       <h5>Our Services</h5>
@@ -22,7 +22,7 @@
   </div>
  </div>
 
- <div id="brand" class="service-wrapper" >
+ <!-- <div id="brand" class="service-wrapper" >
     <div class="container">
       <div class="service-title">
         <h5>Our Brands</h5>
@@ -32,7 +32,7 @@
         <a class="waves-effect waves-light btn mt-3" (click)="navigateTo('/brands')">Explore all Brands</a>
       </div>
     </div>
-   </div>
+   </div> -->
 
 
  <!-- <div class="container" id="retail">
@@ -42,52 +42,6 @@
     <app-product></app-product>
 </div> -->
 
-<div id="about-us" class="container-fluid">
-  <div class="container">
-      <div class="service-title mt-5">
-          <h5>About us</h5>
-      </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-md-6 p-0">
-      <agm-map [zoom]="zoom" [latitude]="lattitude" [longitude]="longitude">
-          <agm-marker [latitude]="lattitude" [longitude]="longitude"></agm-marker>
-      </agm-map>
-    </div>
-    <div class="col-md-6 p-0">
-      <mat-card>
-        <mat-card-content>
-            <mat-list>
-              <h3 mat-subheader>Company</h3>
-              <mat-list-item>
-                <mat-icon mat-list-icon>card_travel</mat-icon>
-                <h4 mat-line>Salem brothers</h4>
-              </mat-list-item>
-              <h3 mat-subheader>Address</h3>
-              <mat-list-item>
-                <mat-icon mat-list-icon>location_on</mat-icon>
-                <h4 mat-line>9-3585 Laird Road, Mississauga, ON, CANADA</h4>
-              </mat-list-item>
-              <h3 mat-subheader>E-mail</h3>
-              <mat-list-item>
-                <mat-icon mat-list-icon>email</mat-icon>
-                <h4 mat-line>sales@salembrotherscanada.com</h4>
-              </mat-list-item>
-              <h3 mat-subheader>Cell</h3>
-              <mat-list-item>
-                <mat-icon mat-list-icon>phone</mat-icon>
-                <h4 mat-line>519-919-6111</h4>
-              </mat-list-item>
-              <h3 mat-subheader>Fax</h3>
-              <mat-list-item>
-                <mat-icon mat-list-icon>phone</mat-icon>
-                <h4 mat-line>905-8282-7997</h4>
-              </mat-list-item>
-            </mat-list>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
-</div>
+
 
 

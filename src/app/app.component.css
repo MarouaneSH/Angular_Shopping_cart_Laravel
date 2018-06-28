@@ -7,8 +7,10 @@
 
 .page-footer
 {
-	background: #309274;
+	background: #74b82c;
   color: white;
+  border-top: solid #e60513;
+  margin-top: 100px;
 }
 .footer-menu {
   list-style: none;

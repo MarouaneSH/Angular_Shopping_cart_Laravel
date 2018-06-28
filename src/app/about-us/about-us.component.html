@@ -1,0 +1,48 @@
+<div id="about-us" class="container-fluid mb-5">
+  <div class="container">
+      <h5>
+        <i class="icon ion-ios-arrow-back" [routerLink]="['/']"></i>
+        About us
+      </h5>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 p-0">
+      <agm-map [zoom]="zoom" [latitude]="lattitude" [longitude]="longitude">
+          <agm-marker [latitude]="lattitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="col-md-6 p-0">
+      <mat-card>
+        <mat-card-content>
+            <mat-list>
+              <h3 mat-subheader>Company</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>card_travel</mat-icon>
+                <h4 mat-line>Salem brothers</h4>
+              </mat-list-item>
+              <h3 mat-subheader>Address</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>location_on</mat-icon>
+                <h4 mat-line>9-3585 Laird Road, Mississauga, ON, CANADA</h4>
+              </mat-list-item>
+              <h3 mat-subheader>E-mail</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>email</mat-icon>
+                <h4 mat-line>sales@salembrotherscanada.com</h4>
+              </mat-list-item>
+              <h3 mat-subheader>Cell</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>phone</mat-icon>
+                <h4 mat-line>519-919-6111</h4>
+              </mat-list-item>
+              <h3 mat-subheader>Fax</h3>
+              <mat-list-item>
+                <mat-icon mat-list-icon>phone</mat-icon>
+                <h4 mat-line>905-8282-7997</h4>
+              </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

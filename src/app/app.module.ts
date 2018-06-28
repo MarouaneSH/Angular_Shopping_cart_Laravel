@@ -26,6 +26,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { CartComponent } from './cart/cart.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailModelComponent,
     CartComponent,
     CartModalComponent,
+    AboutUsComponent,
   ],
   entryComponents : [
     ProductDetailModelComponent,
